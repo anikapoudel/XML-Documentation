@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>BOOSEapp Documentation</title>
+<style>
+body{font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif;margin:24px;background:#f7f8fb;color:#111}
+.container{max-width:1100px;margin:0 auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0 6px 24px rgba(18,38,63,0.08)}
+h1,h2{margin:0 0 10px}
+h1{font-size:28px}
+.header-meta{color:#556; margin-bottom:18px}
+.section{margin-top:18px}
+.member{border-left:4px solid #e6eef8;padding:12px 16px;margin:10px 0;background:#fbfeff;border-radius:6px}
+.member .name{font-weight:700}
+.member .summary{margin-top:6px;color:#333}
+.summary small{color:#556}
+.kv{margin-top:8px;color:#444}
+.code{font-family:monospace;background:#f2f6fb;padding:8px;border-radius:6px;display:inline-block}
+.search{margin-bottom:14px}
+.details{margin-top:8px;color:#444}
+.footer{font-size:13px;color:#6b7280;margin-top:20px}
+</style>
+</head><body><div class='container'>
+<h1>BOOSEapp Documentation (generated from XML)</h1>
+<div class='header-meta'><strong>Assembly:</strong> <span class='code'>BOOSEapp</span></div>
+<div class='section'><h2>Members</h2>
+<div class='member'>
+<div class='name'>T:BOOSEapp.CanvasException</div>
+<div class='summary'>Exception class used for any canvas-related errors.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.CanvasException.#ctor</div>
+<div class='summary'>Initializes a new instance of the</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.CanvasException.#ctor(System.String)</div>
+<div class='summary'>Initializes a new instance of the</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>message</code> — The error message.</li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.CanvasException.#ctor(System.String,System.Exception)</div>
+<div class='summary'>Initializes a new instance of the</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>message</code> — The error message.</li>
+<li><code>innerException</code> — The inner exception that caused this exception.</li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>T:BOOSEapp.AppCanvas</div>
+<div class='summary'>Represents a drawable canvas that supports shapes, text, and lines.
+            Implements the</div>
+</div>
+<div class='member'>
+<div class='name'>F:BOOSEapp.AppCanvas.background_colour</div>
+<div class='summary'>Background color of the canvas.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.#ctor</div>
+<div class='summary'>Initializes a new instance of the</div>
+</div>
+<div class='member'>
+<div class='name'>P:BOOSEapp.AppCanvas.Xpos</div>
+<div class='summary'>Gets or sets the current X position of the pen.</div>
+</div>
+<div class='member'>
+<div class='name'>P:BOOSEapp.AppCanvas.Ypos</div>
+<div class='summary'>Gets or sets the current Y position of the pen.</div>
+</div>
+<div class='member'>
+<div class='name'>P:BOOSEapp.AppCanvas.PenColour</div>
+<div class='summary'>Gets or sets the current pen color.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.Circle(System.Int32,System.Boolean)</div>
+<div class='summary'>Draws a circle at the current pen position.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>radius</code> — Radius of the circle.</li>
+<li><code>filled</code> — If true, draws a filled circle; otherwise, only the outline.</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if the radius is negative or graphics is not initialized. <small>(T:BOOSEapp.CanvasException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.Clear</div>
+<div class='summary'>Clears the canvas to black.</div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if clearing fails. <small>(T:BOOSEapp.CanvasException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.DrawTo(System.Int32,System.Int32)</div>
+<div class='summary'>Draws a line from the current pen position to the specified coordinates.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>toX</code> — X coordinate to draw to.</li>
+<li><code>toY</code> — Y coordinate to draw to.</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if coordinates are invalid or drawing fails. <small>(T:BOOSEapp.CanvasException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.MoveTo(System.Int32,System.Int32)</div>
+<div class='summary'>Moves the pen to a new position without drawing.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>x</code> — New X position.</li>
+<li><code>y</code> — New Y position.</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if coordinates are invalid. <small>(T:BOOSEapp.CanvasException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.Rect(System.Int32,System.Int32,System.Boolean)</div>
+<div class='summary'>Draws a rectangle at the current pen position.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>width</code> — Width of the rectangle.</li>
+<li><code>height</code> — Height of the rectangle.</li>
+<li><code>filled</code> — If true, draws filled; otherwise, outline only.</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if dimensions are invalid or drawing fails. <small>(T:BOOSEapp.CanvasException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.Rectangle(System.Int32,System.Int32,System.Boolean)</div>
+<div class='summary'>Alias for Rect method to match documentation.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.Reset</div>
+<div class='summary'>Resets the pen position to the origin (0,0).</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.Set(System.Int32,System.Int32)</div>
+<div class='summary'>Sets the canvas dimensions.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>width</code> — Width of canvas.</li>
+<li><code>height</code> — Height of canvas.</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if graphics initialization fails. <small>(T:BOOSEapp.CanvasException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.SetColour(System.Int32,System.Int32,System.Int32)</div>
+<div class='summary'>Sets the pen color using RGB values.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>red</code> — Red component (0-255).</li>
+<li><code>green</code> — Green component (0-255).</li>
+<li><code>blue</code> — Blue component (0-255).</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if RGB values are out of range or setting color fails. <small>(T:BOOSEapp.CanvasException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.Tri(System.Int32,System.Int32)</div>
+<div class='summary'>Draws a triangle at the current pen position.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>width</code> — Width of the triangle's bounding rectangle.</li>
+<li><code>height</code> — Height of the triangle.</li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.Tri(System.Int32,System.Int32,System.Boolean)</div>
+<div class='summary'>Draws a triangle at the current pen position, optionally filled.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>width</code> — Width of the triangle's bounding rectangle.</li>
+<li><code>height</code> — Height of the triangle.</li>
+<li><code>filled</code> — True for filled triangle, false for outline.</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if dimensions are invalid or drawing fails. <small>(T:BOOSEapp.CanvasException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.WriteText(System.String)</div>
+<div class='summary'>Writes text at the current pen position.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>text</code> — Text to display.</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if text is empty or drawing fails. <small>(T:BOOSEapp.CanvasException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCanvas.getBitmap</div>
+<div class='summary'>Gets the bitmap representing the current canvas.</div>
+<div class='details'><strong>Returns:</strong> The canvas bitmap as an object.</div>
+</div>
+<div class='member'>
+<div class='name'>T:BOOSEapp.AppCircle</div>
+<div class='summary'>Command to draw a circle on the canvas.
+            Supports optional filled parameter.</div>
+</div>
+<div class='member'>
+<div class='name'>F:BOOSEapp.AppCircle.filled</div>
+<div class='summary'>Indicates whether the circle should be filled or just outlined.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCircle.#ctor(BOOSEapp.AppCanvas)</div>
+<div class='summary'>Initializes a new instance of the</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>c</code> — The canvas on which the circle will be drawn.</li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCircle.CheckParameters(System.String[])</div>
+<div class='summary'>Checks the parameters provided to the Circle command.
+            Expects radius (required) and filled (optional) parameters.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>parameterList</code> — Array of string parameters.</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if parameters are invalid. <small>(T:BOOSE.CommandException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCircle.Execute</div>
+<div class='summary'>Executes the Circle command, drawing the circle on the canvas.</div>
+</div>
+<div class='member'>
+<div class='name'>T:BOOSEapp.AppCommandFactory</div>
+<div class='summary'>Factory class to create command objects associated with a specific canvas.
+            Implements the Factory Design Pattern.</div>
+</div>
+<div class='member'>
+<div class='name'>F:BOOSEapp.AppCommandFactory._canvas</div>
+<div class='summary'>Reference to the canvas used by commands.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCommandFactory.#ctor(BOOSEapp.AppCanvas)</div>
+<div class='summary'>Initializes a new instance of the</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>canvas</code> — Canvas that commands will operate on.</li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppCommandFactory.MakeCommand(System.String)</div>
+<div class='summary'>Creates and returns a command instance based on the specified command type.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>commandType</code> — The type of command to create.</li>
+</ul></div>
+<div class='details'><strong>Returns:</strong> An</div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown when the command type is not recognized. <small>(T:System.NotSupportedException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>T:BOOSEapp.AppDrawTo</div>
+<div class='summary'>Implements the DRAWTO command, drawing a line from the current
+            pen position to the specified (x, y) coordinates.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppDrawTo.#ctor(BOOSEapp.AppCanvas)</div>
+<div class='summary'>Creates a new DRAWTO command bound to the provided canvas.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>c</code> — The drawing canvas.</li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppDrawTo.CheckParameters(System.String[])</div>
+<div class='summary'>Validates the X and Y coordinate parameters.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>parameters</code> — Command input (x, y).</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if parameters are missing or not integers. <small>(T:BOOSE.CommandException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppDrawTo.Execute</div>
+<div class='summary'>Draws a line from the current pen position to the target point.</div>
+</div>
+<div class='member'>
+<div class='name'>T:BOOSEapp.AppMoveTo</div>
+<div class='summary'>Implements the MOVETO command, updating the pen's position
+            without drawing a line.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppMoveTo.#ctor(BOOSEapp.AppCanvas)</div>
+<div class='summary'>Creates a new MOVETO command bound to the provided canvas.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>c</code> — The drawing canvas.</li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppMoveTo.CheckParameters(System.String[])</div>
+<div class='summary'>Validates the X and Y coordinate parameters.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>parameters</code> — Command input (x, y).</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown when the parameter count is incorrect or not integers. <small>(T:BOOSE.CommandException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppMoveTo.Execute</div>
+<div class='summary'>Updates the pen position on the canvas without drawing.</div>
+</div>
+<div class='member'>
+<div class='name'>T:BOOSEapp.AppParser</div>
+<div class='summary'>Parses input strings and generates commands using the factory.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppParser.ParseCommand(System.String)</div>
+<div class='summary'>Parse a single command line and return ICommand.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppParser.ParseProgram(System.String)</div>
+<div class='summary'>Parses a program consisting of multiple lines.</div>
+</div>
+<div class='member'>
+<div class='name'>T:BOOSEapp.AppPenColor</div>
+<div class='summary'>Implements the PEN command to change the current pen colour
+            on the canvas using RGB values.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppPenColor.#ctor(BOOSEapp.AppCanvas)</div>
+<div class='summary'>Creates a new PEN command bound to the given canvas.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>c</code> — The drawing canvas.</li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppPenColor.CheckParameters(System.String[])</div>
+<div class='summary'>Validates and parses RGB colour parameters.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>parameterList</code> — Command input (R, G, B).</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if parameter count is incorrect or any value is invalid. <small>(T:BOOSE.CommandException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppPenColor.Execute</div>
+<div class='summary'>Executes the pen colour change on the canvas.</div>
+</div>
+<div class='member'>
+<div class='name'>T:BOOSEapp.AppRectangle</div>
+<div class='summary'>Draws a rectangle on the canvas using the specified width, height, 
+            and an optional filled flag.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppRectangle.#ctor(BOOSEapp.AppCanvas)</div>
+<div class='summary'>Creates a new rectangle command bound to the given canvas.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>canvas</code> — The drawing canvas.</li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppRectangle.CheckParameters(System.String[])</div>
+<div class='summary'>Validates and parses width, height, and optional filled parameter.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>parameters</code> — Command input parameters.</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown when parameter count or format is invalid. <small>(T:BOOSE.CommandException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppRectangle.Execute</div>
+<div class='summary'>Executes the rectangle drawing action on the canvas.</div>
+</div>
+<div class='member'>
+<div class='name'>T:BOOSEapp.AppTriangle</div>
+<div class='summary'>Draws a triangle on the canvas using width, height, 
+            and an optional filled flag.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppTriangle.#ctor(BOOSEapp.AppCanvas)</div>
+<div class='summary'>Creates a new triangle command bound to the given canvas.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>canvas</code> — The drawing canvas.</li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppTriangle.CheckParameters(System.String[])</div>
+<div class='summary'>Validates and parses width, height, and optional filled parameter.</div>
+<div class='details'><strong>Parameters:</strong><ul>
+<li><code>parameterList</code> — Command input parameters.</li>
+</ul></div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown if parameter count or values are invalid. <small>(T:BOOSE.CommandException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.AppTriangle.Execute</div>
+<div class='summary'>Executes the triangle drawing operation on the canvas.</div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown when width or height are zero or negative. <small>(T:BOOSEapp.CanvasException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.Program.Main</div>
+<div class='summary'>The main entry point for the application.</div>
+</div>
+<div class='member'>
+<div class='name'>T:BOOSEapp.Properties.Resources</div>
+<div class='summary'>A strongly-typed resource class, for looking up localized strings, etc.</div>
+</div>
+<div class='member'>
+<div class='name'>P:BOOSEapp.Properties.Resources.ResourceManager</div>
+<div class='summary'>Returns the cached ResourceManager instance used by this class.</div>
+</div>
+<div class='member'>
+<div class='name'>P:BOOSEapp.Properties.Resources.Culture</div>
+<div class='summary'>Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.</div>
+</div>
+<div class='member'>
+<div class='name'>T:BOOSEapp.StoredProgram</div>
+<div class='summary'>Represents a basic stored BOOSE program containing commands,
+            a program counter, and a simple variable/expression system.</div>
+</div>
+<div class='member'>
+<div class='name'>P:BOOSEapp.StoredProgram.SyntaxOk</div>
+<div class='summary'>Indicates whether the program syntax was validated successfully.</div>
+</div>
+<div class='member'>
+<div class='name'>P:BOOSEapp.StoredProgram.PC</div>
+<div class='summary'>Gets or sets the program counter.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.#ctor(BOOSE.ICanvas)</div>
+<div class='summary'>Creates a new stored program managed by the given canvas.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.AddCommand(BOOSE.ICommand)</div>
+<div class='summary'>Adds a BOOSE command to the program.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.ResetProgram</div>
+<div class='summary'>Resets execution state back to the beginning.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.Clear</div>
+<div class='summary'>Clears all commands and variables.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.Commandsleft</div>
+<div class='summary'>Returns true if there are commands still to execute.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.NextCommand</div>
+<div class='summary'>Retrieves and advances to the next command.</div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown when no commands are left. <small>(T:BOOSE.StoredProgramException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.Run</div>
+<div class='summary'>Executes all commands sequentially from the start.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.AddVariable(BOOSE.Evaluation)</div>
+<div class='summary'>Adds or updates a variable in the program.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.VariableExists(System.String)</div>
+<div class='summary'>Checks if a variable has been defined.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.GetVarValue(System.String)</div>
+<div class='summary'>Retrieves the value of a stored variable.</div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown when variable is missing. <small>(T:BOOSE.StoredProgramException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.IsExpression(System.String)</div>
+<div class='summary'>Determines whether a string is a variable or simple expression.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.EvaluateExpression(System.String)</div>
+<div class='summary'>Evaluates a mathematical expression or returns a variable value.</div>
+<div class='details'><strong>Exceptions:</strong><ul>
+<li>Thrown for invalid expressions. <small>(T:BOOSE.StoredProgramException)</small></li>
+</ul></div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.Add(BOOSE.Command)</div>
+<div class='summary'>Adds a Command (BOOSE base type) and returns its index.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.Push(BOOSE.ConditionalCommand)</div>
+<div class='summary'>Pushes a conditional command onto the stack.
+            Overridden in</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.StoredProgram.Pop</div>
+<div class='summary'>Pops a conditional command from the stack.
+            Overridden in</div>
+</div>
+<div class='member'>
+<div class='name'>T:BOOSEapp.ApplicationConfiguration</div>
+<div class='summary'>Bootstrap the application configuration.</div>
+</div>
+<div class='member'>
+<div class='name'>M:BOOSEapp.ApplicationConfiguration.Initialize</div>
+<div class='summary'>Bootstrap the application as follows:</div>
+</div>
+</div>
+<div class='footer'>Generated from the uploaded XML file: <code>BOOSEapp.xml</code></div>
+</div></body></html>
